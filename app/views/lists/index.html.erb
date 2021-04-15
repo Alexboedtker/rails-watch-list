@@ -7,8 +7,8 @@
   <div class="card-container-flex">
     <% @lists.each do |list| %>
         <div class="list-card">
-        <%= image_tag "card.jpg", alt: "Movie Theater" %>
-        <%= link_to list.name, list %>
+          <div><%= image_tag "card.jpg", alt: "Movie Theater" %></div>
+          <div class="vertical-align"><%= link_to list.name, list %></div>
         </div>
     <% end %>
   </div>

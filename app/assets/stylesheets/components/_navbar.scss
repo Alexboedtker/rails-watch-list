@@ -2,9 +2,14 @@
   justify-content: space-between;
   background: white;
   align-items: center;
+  padding-right: 20px;
 
   p {
     margin: 10px 20px;
+
+    a {
+      color: #343B40;
+    }
   }
 
   .btn a {
@@ -14,6 +19,10 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar-brand {
+  margin: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
