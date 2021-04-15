@@ -6,7 +6,7 @@
   <h2>What are you in the Mood for?</h2>
   <div class="card-container-flex">
     <% @lists.each do |list| %>
-        <div class="movie-card">
+        <div class="list-card">
         <%= image_tag "card.jpg", alt: "Movie Theater" %>
         <%= link_to list.name, list %>
         </div>
