@@ -9,7 +9,17 @@
       <% end %>
     </div>
     <div class="col-4">
-      <%= link_to 'Add a Bookmark', new_list_bookmark_path(@list) %>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <div class="form-inputs">
+          <%= f.input :comment %>
+          <%= f.association :movie %>
+        </div>
+        <div class="form-actions btn btn-primary">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
