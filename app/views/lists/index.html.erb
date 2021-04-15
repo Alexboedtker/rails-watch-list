@@ -1,0 +1,16 @@
+<div class="banner">
+  <h1>Movie Club</h1>
+</div>
+
+<div class="main-container">
+  <h2>What are you in the Mood for?</h2>
+  <div class="card-container-flex">
+    <% @lists.each do |list| %>
+        <div class="movie-card">
+        <%= image_tag "card.jpg", alt: "Movie Theater" %>
+        <%= link_to list.name, list %>
+        </div>
+    <% end %>
+  </div>
+</div>
+

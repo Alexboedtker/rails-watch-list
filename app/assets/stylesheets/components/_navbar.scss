@@ -1,6 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  align-items: center;
+
+  p {
+    margin: 10px 20px;
+  }
+
+  .btn a {
+    color: #fff;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
