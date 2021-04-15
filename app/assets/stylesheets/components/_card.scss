@@ -15,3 +15,34 @@
     padding: 10px 0;
   }
 }
+
+.movie-card {
+  height: 260px;
+  width: 302px;
+  border: 1px solid #343B40;
+  margin-bottom: 200px;
+
+  img {
+    height: 200px;
+  }
+
+  a {
+    color: #343B40;
+  }
+
+  .bottom-left {
+    flex-grow: 1;
+  }
+
+  .card-bottom {
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    h4 {
+      text-align: left;
+    }
+    p {
+      text-align: left;
+    }
+  }
+}
