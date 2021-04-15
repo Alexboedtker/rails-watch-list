@@ -1,7 +1,7 @@
 .list-card {
   height: 250px;
   border: 1px solid #343B40;
-  margin-bottom: 200px;
+  margin-bottom: 40px;
 
   img {
     height: 200px;
@@ -16,11 +16,16 @@
   }
 }
 
+.cards {
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .movie-card {
   height: 260px;
   width: 302px;
   border: 1px solid #343B40;
-  margin-bottom: 200px;
+  margin-bottom: 40px;
 
   img {
     height: 200px;
