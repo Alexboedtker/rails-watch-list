@@ -1,5 +1,4 @@
 .banner {
-  background-image: asset-url('banner.jpg');
   height: 50vh;
   background-size: cover;
   background-position: center;
@@ -14,4 +13,8 @@
   font-weight: bold;
   text-align: center;
   margin-top: 120px;
+}
+
+.home {
+  background-image: asset-url('banner.jpg');
 }
