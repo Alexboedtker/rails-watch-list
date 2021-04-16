@@ -2,15 +2,17 @@
 <div class="main-container">
   <h2><%= @list.name %></h2>
   <div class="row">
+
     <div class="col-8 flex cards">
-      <% @list.bookmarks.each do |bookmark| %>
+      <% @list.movies.each do |movie| %>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
         <div class="movie-card">
           <div class="card-top">
-            <div><%= image_tag "movie-card.jpg", alt: "Movie Card" %></div>
+            <div><%= image_tag movie.poster_url, alt: movie.title %></div>
           </div>
           <div class="card-bottom flex">
             <div class="bottom-left">
-              <h4><%= bookmark.movie.title %></h4>
+              <h4><%= movie.title %></h4>
               <p><%= bookmark.comment %></p>
             </div>
             <%= link_to bookmark, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-remove-link' do %>
@@ -20,6 +22,9 @@
         </div>
       <% end %>
     </div>
+
+
+
     <div class="col-4">
       <%= simple_form_for [@list, @bookmark] do |f| %>
         <%= f.error_notification %>

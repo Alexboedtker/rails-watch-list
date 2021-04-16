@@ -5,19 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Cleaning database..."
-Movie.destroy_all
+require 'open-uri'
+require 'json'
 
-puts "Creating movies..."
+puts "Cleaning up database..."
+List.destroy_all
+Bookmark.destroy_all
+puts "Database cleaned"
 
-100.times do
-  movie = Movie.create(
-    title: Faker::Movie.title,
-    overview: Faker::Movie.quote,
-    poster_url: Faker::Internet.url,
-    rating: rand(1..10)
+url = "http://tmdb.lewagon.com/movie/top_rated"
+10.times do |i|
+  puts "Importing movies from page #{i + 1}"
+  movies = JSON.parse(open("#{url}?page=#{i + 1}").read)['results']
+  movies.each do |movie|
+    puts "Creating #{movie['title']}"
+    base_poster_url = "https://image.tmdb.org/t/p/original"
+    Movie.create(
+      title: movie['title'],
+      overview: movie['overview'],
+      poster_url: "#{base_poster_url}#{movie['backdrop_path']}",
+      rating: movie['vote_average']
     )
-  puts "Movie #{movie.id} is created"
+  end
 end
-
-puts "Finished!"
+puts "Movies created"
